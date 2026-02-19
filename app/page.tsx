@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Lottie from "lottie-react";
 import doctorAnimation from "./doctor.json"; // add any lottie doctor json here
-
 export default function LoginPage() {
   const router = useRouter();
 
@@ -13,7 +12,7 @@ export default function LoginPage() {
   const [remember, setRemember] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  console.log("Admin Email:", process.env.NEXT_PUBLIC_ADMIN_EMAIL);
   useEffect(() => {
     const savedEmail = localStorage.getItem("rememberedEmail");
     if (savedEmail) {
@@ -21,13 +20,15 @@ export default function LoginPage() {
       setRemember(true);
     }
   }, []);
+  console.log("Admin Email from env:", process.env.NEXT_PUBLIC_ADMIN_EMAIL);
+  console.log("Admin Password from env:", process.env.NEXT_PUBLIC_ADMIN_PASSWORD);
 
   const handleLogin = (e:any) => {
     e.preventDefault();
     setLoading(true);
 
     setTimeout(() => {
-      if (email === "admin@gmail.com" && password === "123456") {
+      if (email === process.env.NEXT_PUBLIC_ADMIN_EMAIL && password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("userEmail", email);
 
