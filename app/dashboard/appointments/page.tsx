@@ -60,7 +60,7 @@ export default function AppointmentsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 pb-24">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-blue-100 pb-24">
 
       {/* HEADER */}
       <div className="sticky top-0 z-20 bg-white/70 backdrop-blur border-b px-4 py-4 flex items-center gap-4">

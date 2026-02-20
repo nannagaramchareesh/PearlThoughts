@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 // Importing like this is fine for the initial structure/types
-import db from "../../../../db.json"; 
+import db from "../../../db.json"; 
 
 export async function GET() {
   try {
