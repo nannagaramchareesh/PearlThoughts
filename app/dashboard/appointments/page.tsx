@@ -44,7 +44,7 @@ export default function AppointmentsPage() {
         {/* 2. DOCTOR MINI PROFILE */}
         <div className="flex items-center gap-5">
           <div className="relative">
-            <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-2xl font-bold text-white shadow-lg shadow-blue-200">
+            <div className="w-20 h-20 rounded-3xl bg-linear-to-br from-blue-500 to-blue-700 flex items-center justify-center text-2xl font-bold text-white shadow-lg shadow-blue-200">
               {doctor.name.charAt(4)}
             </div>
             <div className="absolute -bottom-1 -right-1 bg-green-500 w-5 h-5 border-4 border-white rounded-full"></div>
@@ -72,7 +72,7 @@ export default function AppointmentsPage() {
                 <button
                   key={day.toString()}
                   onClick={() => setSelectedDate(day)}
-                  className={`flex-shrink-0 w-16 py-4 rounded-2xl transition-all border ${
+                  className={`shrink-0 w-16 py-4 rounded-2xl transition-all border ${
                     isSelected 
                     ? "bg-blue-600 border-blue-600 text-white shadow-xl shadow-blue-100 scale-105" 
                     : "bg-white border-slate-100 text-slate-500 hover:border-blue-200"

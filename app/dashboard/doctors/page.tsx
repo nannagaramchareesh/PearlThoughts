@@ -38,7 +38,7 @@ export default function DoctorsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 px-4 sm:px-6 md:px-8 py-6">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-blue-100 px-4 sm:px-6 md:px-8 py-6">
       {/* HEADER */}
       <div className="flex flex-col gap-4 mb-6">
         <div>
@@ -76,7 +76,7 @@ export default function DoctorsPage() {
             >
               <CardContent className="p-6 flex flex-col items-center text-center">
                 {/* AVATAR */}
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-3xl font-bold text-blue-700 mb-4 shadow-inner">
+                <div className="w-20 h-20 rounded-full bg-linear-to-br from-blue-100 to-blue-200 flex items-center justify-center text-3xl font-bold text-blue-700 mb-4 shadow-inner">
                   {doc.name.charAt(0)}
                 </div>
 
