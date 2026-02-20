@@ -53,7 +53,7 @@ export default function LoginPage() {
       }
 
       // 👨‍⚕️ 2. Check Doctors
-      const doctorRes = await fetch(`http://localhost:3001/doctors`);
+      const doctorRes = await fetch(`/api/doctors`);
       const doctors = await doctorRes.json();
 
       const foundDoctor = doctors.find(
@@ -72,7 +72,7 @@ export default function LoginPage() {
       }
 
       // 👤 3. Check Users
-      const userRes = await fetch(`http://localhost:3001/users`);
+      const userRes = await fetch(`/api/users`);
       const users = await userRes.json();
 
       const foundUser = users.find(

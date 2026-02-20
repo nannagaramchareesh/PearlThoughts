@@ -22,7 +22,7 @@ export default function SignupPage() {
   setLoading(true);
 
   try {
-    await fetch(`http://localhost:3001/users`, {
+    await fetch(`/api/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -14,9 +14,19 @@
       "email": "kamal@gmail.com",
       "password": "kamal@123",
       "id": 3
+    },
+    {
+      "id": 1771614443402,
+      "email": "dsfasd@gmail.com",
+      "password": "adsfasdfs"
+    },
+    {
+      "id": 1771614457550,
+      "email": "goo@gmail.com",
+      "password": "goo@123"
     }
   ],
- "doctors": [
+  "doctors": [
     {
       "id": 1,
       "name": "Dr. Ravi Shanker",
@@ -25,8 +35,14 @@
       "location": "Mumbai",
       "experience": "12 years",
       "slots": {
-        "morning": ["09:00 AM", "10:00 AM"],
-        "evening": ["05:30 PM", "06:30 PM"]
+        "morning": [
+          "09:00 AM",
+          "10:00 AM"
+        ],
+        "evening": [
+          "05:30 PM",
+          "06:30 PM"
+        ]
       }
     },
     {
@@ -37,8 +53,14 @@
       "location": "Bangalore",
       "experience": "8 years",
       "slots": {
-        "morning": ["10:30 AM", "11:30 AM"],
-        "evening": ["04:00 PM", "05:00 PM"]
+        "morning": [
+          "10:30 AM",
+          "11:30 AM"
+        ],
+        "evening": [
+          "04:00 PM",
+          "05:00 PM"
+        ]
       }
     },
     {
@@ -49,8 +71,14 @@
       "location": "Delhi",
       "experience": "15 years",
       "slots": {
-        "morning": ["08:30 AM", "09:30 AM"],
-        "evening": ["06:00 PM", "07:30 PM"]
+        "morning": [
+          "08:30 AM",
+          "09:30 AM"
+        ],
+        "evening": [
+          "06:00 PM",
+          "07:30 PM"
+        ]
       }
     },
     {
@@ -61,8 +89,14 @@
       "location": "Hyderabad",
       "experience": "10 years",
       "slots": {
-        "morning": ["10:00 AM", "11:00 AM"],
-        "evening": ["03:00 PM", "04:00 PM"]
+        "morning": [
+          "10:00 AM",
+          "11:00 AM"
+        ],
+        "evening": [
+          "03:00 PM",
+          "04:00 PM"
+        ]
       }
     },
     {
@@ -73,8 +107,14 @@
       "location": "Chennai",
       "experience": "14 years",
       "slots": {
-        "morning": ["09:00 AM", "11:30 AM"],
-        "evening": ["05:00 PM", "06:00 PM"]
+        "morning": [
+          "09:00 AM",
+          "11:30 AM"
+        ],
+        "evening": [
+          "05:00 PM",
+          "06:00 PM"
+        ]
       }
     },
     {
@@ -85,8 +125,14 @@
       "location": "Pune",
       "experience": "9 years",
       "slots": {
-        "morning": ["10:00 AM", "12:00 PM"],
-        "evening": ["04:30 PM", "06:30 PM"]
+        "morning": [
+          "10:00 AM",
+          "12:00 PM"
+        ],
+        "evening": [
+          "04:30 PM",
+          "06:30 PM"
+        ]
       }
     },
     {
@@ -97,8 +143,14 @@
       "location": "Kolkata",
       "experience": "11 years",
       "slots": {
-        "morning": ["08:00 AM", "09:30 AM"],
-        "evening": ["05:30 PM", "07:00 PM"]
+        "morning": [
+          "08:00 AM",
+          "09:30 AM"
+        ],
+        "evening": [
+          "05:30 PM",
+          "07:00 PM"
+        ]
       }
     },
     {
@@ -109,8 +161,14 @@
       "location": "Ahmedabad",
       "experience": "7 years",
       "slots": {
-        "morning": ["11:00 AM", "12:30 PM"],
-        "evening": ["03:30 PM", "05:00 PM"]
+        "morning": [
+          "11:00 AM",
+          "12:30 PM"
+        ],
+        "evening": [
+          "03:30 PM",
+          "05:00 PM"
+        ]
       }
     },
     {
@@ -121,8 +179,14 @@
       "location": "Lucknow",
       "experience": "13 years",
       "slots": {
-        "morning": ["09:30 AM", "10:30 AM"],
-        "evening": ["06:00 PM", "08:00 PM"]
+        "morning": [
+          "09:30 AM",
+          "10:30 AM"
+        ],
+        "evening": [
+          "06:00 PM",
+          "08:00 PM"
+        ]
       }
     },
     {
@@ -133,8 +197,14 @@
       "location": "Jaipur",
       "experience": "6 years",
       "slots": {
-        "morning": ["10:00 AM", "11:30 AM"],
-        "evening": ["04:00 PM", "05:30 PM"]
+        "morning": [
+          "10:00 AM",
+          "11:30 AM"
+        ],
+        "evening": [
+          "04:00 PM",
+          "05:30 PM"
+        ]
       }
     }
   ]
