@@ -1,64 +1,135 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function Dashboard() {
+// shadcn
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+export default function DashboardPage() {
+  const { user, logout } = useAuth();
   const router = useRouter();
-  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const storedEmail:any = localStorage.getItem("userEmail");
+    if (!user) router.push("/login");
+  }, [user]);
 
-    if (!isLoggedIn) {
-      router.push("/"); // redirect if not logged in
-    } else {
-      setEmail(storedEmail);
-    }
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("userEmail");
-    router.push("/");
-  };
+  if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-[#F7FAFC] flex flex-col">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-blue-100 px-4 sm:px-6 md:px-8 py-6">
 
-      {/* NAVBAR */}
-      <nav className="w-full bg-white shadow-sm px-10 py-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-blue-600">PearlThough</h1>
-
-        <button
-          onClick={handleLogout}
-          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"
-        >
-          Logout
-        </button>
-      </nav>
-
-      {/* CONTENT */}
-      <div className="flex flex-1 justify-center items-center">
-        <div className="bg-white shadow-xl rounded-2xl p-10 text-center border border-gray-200 max-w-md w-full">
-
-          <h2 className="text-3xl font-bold text-[#0F172A] mb-3">
-            ✅ Authenticated Successfully
-          </h2>
-
-          <p className="text-gray-600 mb-6">
-            Welcome back,
-            <span className="font-semibold text-blue-600"> {email}</span>
+      {/* HEADER */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            Welcome back, {user.email.split("@")[0]} 👋
+          </h1>
+          <p className="text-gray-500 text-sm">
+            Manage your health dashboard easily
           </p>
+        </div>
 
-          <button
-            onClick={handleLogout}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold transition"
+        <div className="flex items-center gap-3 flex-wrap">
+          <Badge className="bg-blue-100 text-blue-700 border border-blue-200 px-3 py-1 text-xs sm:text-sm">
+            {user.role.toUpperCase()}
+          </Badge>
+
+          <Button
+            variant="destructive"
+            onClick={() => {
+              logout();
+              router.push("/login");
+            }}
+            className="rounded-xl"
           >
             Logout
-          </button>
+          </Button>
         </div>
+      </div>
+
+      {/* STATS */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        
+        <Card className="rounded-2xl shadow-md hover:shadow-xl transition bg-linear-to-r from-blue-500 to-blue-600 text-white">
+          <CardContent className="p-6">
+            <p className="text-sm opacity-80">Appointments</p>
+            <h2 className="text-3xl font-bold mt-2">12</h2>
+            <p className="text-xs mt-1 opacity-80">+2 this week</p>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-2xl shadow-md hover:shadow-xl transition bg-linear-to-r from-purple-500 to-indigo-500 text-white">
+          <CardContent className="p-6">
+            <p className="text-sm opacity-80">Doctors Available</p>
+            <h2 className="text-3xl font-bold mt-2">24</h2>
+            <p className="text-xs mt-1 opacity-80">Updated daily</p>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-2xl shadow-md hover:shadow-xl transition bg-linear-to-r from-pink-500 to-rose-500 text-white">
+          <CardContent className="p-6">
+            <p className="text-sm opacity-80">Reports</p>
+            <h2 className="text-3xl font-bold mt-2">8</h2>
+            <p className="text-xs mt-1 opacity-80">New uploads</p>
+          </CardContent>
+        </Card>
+
+      </div>
+
+      {/* QUICK ACTIONS */}
+      <div className="mb-10">
+        <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
+          Quick Actions
+        </h2>
+
+        <div className="flex flex-wrap gap-3">
+          <Button
+            className="rounded-xl bg-blue-600 hover:bg-blue-700"
+            onClick={() => router.push("/dashboard/doctors")}
+          >
+            View Doctors
+          </Button>
+
+          <Button variant="secondary" className="rounded-xl">
+            Book Appointment
+          </Button>
+
+          <Button variant="outline" className="rounded-xl">
+            View Reports
+          </Button>
+        </div>
+      </div>
+
+      {/* ACTIVITY */}
+      <div>
+        <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
+          Recent Activity
+        </h2>
+
+        <Card className="rounded-2xl shadow-md bg-white/80 backdrop-blur">
+          <CardContent className="p-5 sm:p-6 space-y-4 text-sm sm:text-base">
+
+            <div className="flex justify-between text-gray-600">
+              <span>Appointment booked with Dr. Ravi</span>
+              <span className="text-xs sm:text-sm">2h ago</span>
+            </div>
+
+            <div className="flex justify-between text-gray-600">
+              <span>Report uploaded</span>
+              <span className="text-xs sm:text-sm">Yesterday</span>
+            </div>
+
+            <div className="flex justify-between text-gray-600">
+              <span>New doctor added</span>
+              <span className="text-xs sm:text-sm">2 days ago</span>
+            </div>
+
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
